@@ -135,7 +135,8 @@ const Home = () => {
               </h2>
               <div className="gap-8">
                 <h1 className="text-2xl font-bold text-center mb-12 text-white">
-                  When you sign up for SecurePass, you can create a unique password for all your accounts.
+                  When you sign up for Proton Pass, you'll get access to the free tier of
+                  Proton VPN, Proton Mail, Proton Calendar, and Proton Drive.
                 </h1>
               </div>
 
