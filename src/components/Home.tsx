@@ -41,9 +41,9 @@ const Home = () => {
 
           <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8 }}
+                initial={{opacity: 0, y: 20}}
+                animate={{opacity: 1, y: 0}}
+                transition={{duration: 1.0}}
                 className="text-center"
             >
               <h1 className="text-4xl md:text-6xl font-bold mb-6">
@@ -53,8 +53,8 @@ const Home = () => {
                 Generate unique, strong passwords for all your accounts
               </p>
               <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
+                  whileHover={{scale: 1.05}}
+                  whileTap={{scale: 0.95}}
                   onClick={() => navigate('/generator')}
                   className="bg-white text-emerald-700 px-8 py-3 rounded-full font-semibold text-lg shadow-lg hover:shadow-xl transition-shadow"
               >
@@ -64,15 +64,58 @@ const Home = () => {
           </div>
         </section>
 
-        {/* New Feature Section */}
-        <section className="py-20 bg-white">
+        <section id="about" className="py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid md:grid-cols-2 gap-12 items-center">
+            <motion.div
+                initial={{opacity: 0, x: -20}}
+                whileInView={{opacity: 1, x: 0}}
+                transition={{duration: 0.8}}
+                className="space-y-6"
+            >
+              <h2 className="text-5xl font-bold text-center mb-12 text-gray-800">
+                encrypted solutions to protect your Digital Life
+              </h2>
+              <div className=" gap-8">
+                <h1 className="text-2xl font-bold text-center mb-12 text-gray-800">According to the latest reports,
+                  24% of breaches are caused by stolen credentials. Improve your business's security and make it easy
+                  to create and safely
+                  share unique passwords for all your accounts with Proton Pass for Business.</h1>
+              </div>
+            </motion.div>
+          </div>
+        </section>
+
+        <section id="about" className="py-20 bg-emerald-800 relative">
+          <motion.div
+              initial={{opacity: 0, x: 20}}
+              whileInView={{opacity: 1, x: 0}}
+              transition={{duration: 0.8}}
+              className="flex justify-center"
+          >
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+              <h2 className="text-5xl font-bold text-center mb-12 text-white">
+                Protect more than just your passwords
+              </h2>
+              <div className=" gap-8">
+                <h1 className="text-2xl font-bold text-center mb-12 text-white">When you sign up for Proton Pass,
+                  you'll get access to the free tier of Proton VPN, Proton Mail, Proton Calendar, and Proton Drive.</h1>
+              </div>
+
+      </div>
+          </motion.div>
+</section>
+
+{/* New Feature Section */
+}
+  <section className="py-20 bg-white">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="grid md:grid-cols-2 gap-12 items-center">
               {/* Left Side: Summary */}
               <motion.div
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.8 }}
+                  initial={{opacity: 0, x: -20}}
+                  whileInView={{opacity: 1, x: 0}}
+                  transition={{duration: 0.8}}
                   className="space-y-6"
               >
                 <h2 className="text-3xl font-bold text-gray-800">
@@ -81,7 +124,7 @@ const Home = () => {
                 <p className="text-gray-600 text-lg">
                   Unlike other password managers, our website uses advanced algorithms to generate strong,
                   highly secure passwords. We prioritize your privacy by <strong>not saving</strong> any of your
-                  passwords. This ensures that your data remains completely secure and under your control.
+                  passwords in database. This ensures that your data remains completely secure and under your control.
                 </p>
                 <p className="text-gray-600 text-lg">
                   Whether you need a password for social media, banking, or any other account, our tool
@@ -91,9 +134,9 @@ const Home = () => {
 
               {/* Right Side: Image */}
               <motion.div
-                  initial={{ opacity: 0, x: 20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.8 }}
+                  initial={{opacity: 0, x: 20}}
+                  whileInView={{opacity: 1, x: 0}}
+                  transition={{duration: 0.8}}
                   className="flex justify-center"
               >
                 <img
@@ -112,9 +155,9 @@ const Home = () => {
             <div className="grid md:grid-cols-2 gap-12 items-center">
               {/* Left Side: Image */}
               <motion.div
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.8 }}
+                  initial={{opacity: 0, x: -20}}
+                  whileInView={{opacity: 1, x: 0}}
+                  transition={{duration: 0.8}}
                   className="flex justify-center"
               >
                 <img
@@ -126,9 +169,9 @@ const Home = () => {
 
               {/* Right Side: Social Media Icons */}
               <motion.div
-                  initial={{ opacity: 0, x: 20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.8 }}
+                  initial={{opacity: 0, x: 20}}
+                  whileInView={{opacity: 1, x: 0}}
+                  transition={{duration: 0.8}}
                   className="text-center space-y-6"
               >
                 <h2 className="text-3xl font-bold text-white">Connect with Social Media</h2>
@@ -192,12 +235,12 @@ const Home = () => {
             </h2>
             <div className="grid md:grid-cols-3 gap-8">
               <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5 }}
+                  initial={{opacity: 0, y: 20}}
+                  whileInView={{opacity: 1, y: 0}}
+                  transition={{duration: 0.5}}
                   className="bg-white p-6 rounded-lg shadow-lg text-center"
               >
-                <Shield className="w-12 h-12 text-emerald-600 mx-auto mb-4" />
+                <Shield className="w-12 h-12 text-emerald-600 mx-auto mb-4"/>
                 <h3 className="text-xl font-semibold mb-2">Secure Generation</h3>
                 <p className="text-gray-600">
                   Advanced algorithms ensure your passwords are truly random and secure
@@ -205,12 +248,12 @@ const Home = () => {
               </motion.div>
 
               <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: 0.2 }}
+                  initial={{opacity: 0, y: 20}}
+                  whileInView={{opacity: 1, y: 0}}
+                  transition={{duration: 0.5, delay: 0.2}}
                   className="bg-white p-6 rounded-lg shadow-lg text-center"
               >
-                <Key className="w-12 h-12 text-emerald-600 mx-auto mb-4" />
+                <Key className="w-12 h-12 text-emerald-600 mx-auto mb-4"/>
                 <h3 className="text-xl font-semibold mb-2">Unique Patterns</h3>
                 <p className="text-gray-600">
                   Create memorable yet secure passwords based on your personal data
@@ -218,17 +261,28 @@ const Home = () => {
               </motion.div>
 
               <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: 0.4 }}
+                  initial={{opacity: 0, y: 20}}
+                  whileInView={{opacity: 1, y: 0}}
+                  transition={{duration: 0.5, delay: 0.4}}
                   className="bg-white p-6 rounded-lg shadow-lg text-center"
               >
-                <Lock className="w-12 h-12 text-emerald-600 mx-auto mb-4" />
+                <Lock className="w-12 h-12 text-emerald-600 mx-auto mb-4"/>
                 <h3 className="text-xl font-semibold mb-2">Privacy First</h3>
                 <p className="text-gray-600">
                   Your data never leaves your device - complete privacy guaranteed
                 </p>
               </motion.div>
+            </div>
+          </div>
+        </section>
+
+        <section id="about" className="py-20">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 className="text-3xl font-bold text-center mb-12 text-gray-800">
+              Time to crack your password
+            </h2>
+            <div className=" gap-8">
+              <h1 className="text-6xl font-bold text-center mb-12 text-gray-800">4 billion years+</h1>
             </div>
           </div>
         </section>
