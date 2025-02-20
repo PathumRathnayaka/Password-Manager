@@ -11,7 +11,7 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-16">
           <Link to="/" className="flex items-center space-x-2">
             <Lock className="h-8 w-8" />
-            <span className="font-bold text-xl">Password Gen</span>
+            <span className="font-bold text-xl">SecurePass</span>
           </Link>
           
           <div className="hidden md:flex space-x-8">
