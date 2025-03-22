@@ -13,7 +13,11 @@ const Navbar = () => {
 
   const handleLoginSuccess = (credentialResponse: any) => {
     const decoded = jwtDecode(credentialResponse.credential);
-    setUser(decoded); // Use setUser from context
+    setUser({
+      name: decoded.name || 'User', // Fallback to 'User' if name is not available
+      email: decoded.email, // Ensure email is included
+      picture: decoded.picture || '', // Fallback to empty string if picture is not available
+    });
     navigate('/generator'); // Redirect to the generator page after login
   };
 

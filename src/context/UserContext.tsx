@@ -2,7 +2,7 @@ import React, { createContext, useContext, useState } from 'react';
 
 interface User {
     name: string;
-    email: string;
+    email: string; // Ensure email is included
     picture: string;
 }
 
