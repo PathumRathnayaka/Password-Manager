@@ -1,12 +1,16 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import PasswordTable from './PasswordTable'; // Separate component for the table
+import { Link, useNavigate } from 'react-router-dom'; // Import useNavigate
+import PasswordTable from './PasswordTable';
+import { useUser } from '../context/UserContext';
 
 interface Passwords {
-  [key: string]: string; // Dynamic keys for platforms
+  [key: string]: string;
 }
 
 const Generator = () => {
+  const { user } = useUser();
+  const navigate = useNavigate(); // Use useNavigate for redirection
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -18,6 +22,7 @@ const Generator = () => {
 
   const [passwords, setPasswords] = useState<Passwords | null>(null);
   const [selectedPlatforms, setSelectedPlatforms] = useState<string[]>([]);
+  const [showLoginPopup, setShowLoginPopup] = useState(false);
 
   const platforms = [
     'facebook',
@@ -50,6 +55,11 @@ const Generator = () => {
   };
 
   const generatePasswords = async () => {
+    if (!user) {
+      setShowLoginPopup(true); // Show login popup if user is not logged in
+      return;
+    }
+
     try {
       const response = await fetch('http://localhost:3000/generate-passwords', {
         method: 'POST',
@@ -138,6 +148,32 @@ const Generator = () => {
               </div>
           )}
         </div>
+
+        {/* Login Popup */}
+        {showLoginPopup && (
+            <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
+              <div className="bg-white p-8 rounded-lg shadow-lg max-w-md w-full">
+                <h2 className="text-2xl font-bold text-emerald-700 mb-6">Login Required</h2>
+                <p className="text-gray-700 mb-6">
+                  You need to log in to generate passwords. Please log in to continue.
+                </p>
+                <div className="flex justify-end space-x-4">
+                  <button
+                      onClick={() => setShowLoginPopup(false)}
+                      className="bg-gray-500 text-white px-4 py-2 rounded-md hover:bg-gray-600 transition-colors"
+                  >
+                    Close
+                  </button>
+                  <button
+                      onClick={() => navigate('/login')} // Redirect to the login page
+                      className="bg-emerald-600 text-white px-4 py-2 rounded-md hover:bg-emerald-700 transition-colors"
+                  >
+                    Log In
+                  </button>
+                </div>
+              </div>
+            </div>
+        )}
       </div>
   );
 };
