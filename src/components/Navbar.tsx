@@ -3,7 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { Lock, Menu } from 'lucide-react';
 import { GoogleLogin, googleLogout } from '@react-oauth/google';
 import { jwtDecode } from 'jwt-decode';
-import { FaUserCircle } from 'react-icons/fa';
+
 import { useUser } from '../context/UserContext';
 
 const Navbar = () => {
@@ -28,7 +28,7 @@ const Navbar = () => {
   };
 
   return (
-      <nav className="bg-emerald-600 text-white">
+      <nav className="bg-[#0c3c3e] text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             <Link to="/" className="flex items-center space-x-2">
@@ -50,7 +50,7 @@ const Navbar = () => {
                     />
                     <button
                         onClick={handleLogout}
-                        className="bg-red-600 text-white px-4 py-2 rounded-md hover:bg-red-700 transition-colors"
+                        className="text-white px-4 py-2 rounded-md hover:bg-opacity-20 hover:bg-white transition-colors"
                     >
                       Logout
                     </button>
@@ -61,12 +61,7 @@ const Navbar = () => {
                         onSuccess={handleLoginSuccess}
                         onError={() => console.log('Login Failed')}
                     />
-                    <Link
-                        to="/signup"
-                        className="bg-white text-emerald-600 px-4 py-2 rounded-md hover:bg-emerald-50 transition-colors"
-                    >
-                      Sign Up
-                    </Link>
+                    {/* Sign Up button has been removed */}
                   </div>
               )}
             </div>
@@ -96,7 +91,7 @@ const Navbar = () => {
                       </div>
                       <button
                           onClick={handleLogout}
-                          className="bg-red-600 text-white px-4 py-2 rounded-md hover:bg-red-700 transition-colors"
+                          className="text-white px-4 py-2 rounded-md hover:bg-opacity-20 hover:bg-white transition-colors"
                       >
                         Logout
                       </button>
@@ -108,12 +103,7 @@ const Navbar = () => {
                           onError={() => console.log('Login Failed')}
                           useOneTap
                       />
-                      <Link
-                          to="/signup"
-                          className="bg-white text-emerald-600 px-4 py-2 rounded-md text-center hover:bg-emerald-50 transition-colors"
-                      >
-                        Sign Up
-                      </Link>
+                      {/* Sign Up button has been removed */}
                     </div>
                 )}
               </div>

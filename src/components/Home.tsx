@@ -4,14 +4,14 @@ import { useNavigate } from 'react-router-dom';
 import { Shield, Key, Lock } from 'lucide-react';
 import heroBackground from '../assets/hero-background.jpg';
 import heroBackgroundMobile from '../assets/hero-backgroundMobilesize.jpg';
-import featureImage from '../assets/about.png';
-import socialMediaImage from '../assets/socialimage.jpg';
+import featureImage from '../assets/password.png';
+import socialMediaImage from '../assets/partner-ddd61ed66fda58bd9076468e83319beb.png';
 import facebookIcon from '../assets/icons8-facebook.svg';
 import linkedinIcon from '../assets/icons8-linkedin (3).svg';
 import instagramIcon from '../assets/icons8-instagram.svg';
 import tiktokIcon from '../assets/icons8-tiktok.svg';
 import twitterIcon from '../assets/icons8-x.svg';
-import backgroundImage from "../assets/adobestock_533250305_bw_0.jpg";
+import backgroundImage from "../assets/database-cyber-security-l6q2iaw8vmd25fgx.jpg";
 
 const Home = () => {
   const [count, setCount] = useState(1_000_000); // Start from 1 million
@@ -120,7 +120,7 @@ const Home = () => {
             style={{backgroundImage: `url(${backgroundImage})`}}
         >
           {/* Green Overlay */}
-          <div className="absolute inset-0 bg-green-900 bg-opacity-50"></div>
+          <div className="absolute inset-0 bg-[#0c3c3e] bg-opacity-50"></div>
 
           <motion.div
               initial={{opacity: 0, x: 20}}
@@ -179,7 +179,7 @@ const Home = () => {
                 <img
                     src={featureImage}
                     alt="Secure Password Generation"
-                    className="rounded-lg shadow-lg w-full max-w-md"
+                    className="rounded-lg shadow-lg w-full max-w"
                 />
               </motion.div>
             </div>
@@ -187,7 +187,7 @@ const Home = () => {
         </section>
 
         {/* Social Media Section */}
-        <section className="py-20 bg-emerald-800 relative">
+        <section className="py-20 bg-[#0c3c3e] relative">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid md:grid-cols-2 gap-12 items-center">
               {/* Left Side: Image */}
